@@ -1,0 +1,14 @@
+service:
+  build: .
+  port: 8080:3000
+  cpu: 1
+  memory: 128mb
+  volumes:
+    - data:/app/data
+volumes:
+  data:
+    driver: local
+    driver_opts:
+      type: nfs4
+      o: addr=10.0.2.4
+      device: /srv/nfs4/stack-test-data
