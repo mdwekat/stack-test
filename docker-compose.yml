@@ -1,6 +1,6 @@
 service:
   build: .
-  port: 8080:3000
+  port: $PORT:3000
   cpu: 1
   memory: 128mb
   volumes:
