@@ -5,7 +5,7 @@ const app = express()
 
 app.get('/', (req, res) => {
   const path = './data/message.txt';
-  let message = "Hello, World!";
+  let message = "Hello, Teamcity!";
 
   try {
     if (fs.existsSync(path)) {
