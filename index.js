@@ -3,7 +3,6 @@ const fs = require('fs')
 
 const app = express()
 
-
 app.get('/', (req, res) => {
   const path = './data/message.txt';
   let message = "Hello, World!";
@@ -12,7 +11,6 @@ app.get('/', (req, res) => {
     if (fs.existsSync(path)) {
       message = fs.readFileSync(path, 'utf8');
     }
-
     res.send(message);
   } catch (err) {
     console.error(err)

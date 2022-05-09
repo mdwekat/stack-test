@@ -11,5 +11,5 @@ volumes:
     driver: local
     driver_opts:
       type: nfs4
-      o: addr=10.0.2.4
-      device: /srv/nfs4/stack-test-data
+      o: "addr=10.0.2.4,rw"
+      device: /stack-test-data

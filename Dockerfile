@@ -5,7 +5,8 @@ FROM node:16.15.0-alpine AS BUILD_IMAGE
 
 # install packages and npm version 7
 RUN apk update && \
-    curl -sfL https://gobinaries.com/tj/node-prune | sh -s -- -b /usr/local/bin
+    apk add curl && \
+    curl -sf https://gobinaries.com/tj/node-prune | sh
 
 # Create app directory
 WORKDIR /app
@@ -23,7 +24,7 @@ COPY . .
 
 
 # run node prune
-RUN /usr/local/bin/node-prune
+RUN node-prune
 
 
 # =========================================================
